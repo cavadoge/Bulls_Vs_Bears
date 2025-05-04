@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=3 uid="uid://dww1jeyb2bn"]
+
+[ext_resource type="Script" path="res://game_controller.gd" id="1_v0vc8"]
+
+[node name="GameRoot" type="Node2D"]
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("1_v0vc8")
+
+[node name="GameScene" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="GameScene"]
+
+[node name="DumpSide" type="Node" parent="GameScene"]
+
+[node name="DumpUnitContainer" type="HBoxContainer" parent="GameScene/DumpSide"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PumpSide" type="Node" parent="GameScene"]
+
+[node name="PumpUnitContainer" type="HBoxContainer" parent="GameScene/PumpSide"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarketBoard" type="Control" parent="GameScene"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CandleStickChart" type="Control" parent="GameScene/MarketBoard"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TrendLine" type="Line2D" parent="GameScene/MarketBoard"]
+
+[node name="BattleScoreLabel" type="Label" parent="GameScene/MarketBoard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="EffectsLayer" type="Node2D" parent="GameScene"]
+
+[node name="PlanningLayer" type="CanvasLayer" parent="GameScene"]
+
+[node name="UnitDeploymentPanel" type="Panel" parent="GameScene/PlanningLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AvailableUnits" type="GridContainer" parent="GameScene/PlanningLayer/UnitDeploymentPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DeployedPreview" type="HBoxContainer" parent="GameScene/PlanningLayer/UnitDeploymentPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TeamMembersPanel" type="HBoxContainer" parent="GameScene/PlanningLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PumpItButton" type="Button" parent="GameScene/PlanningLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BattleLayer" type="CanvasLayer" parent="GameScene"]
+
+[node name="MainUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopPanel" type="HBoxContainer" parent="MainUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarketCapMeter" type="ProgressBar" parent="MainUI/TopPanel"]
+layout_mode = 2
+
+[node name="ScoreCounter" type="Label" parent="MainUI/TopPanel"]
+layout_mode = 2
+
+[node name="CycleIndicator" type="Label" parent="MainUI/TopPanel"]
+layout_mode = 2
+
+[node name="BottomPanel" type="HBoxContainer" parent="MainUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarketInfluence" type="Label" parent="MainUI/BottomPanel"]
+layout_mode = 2
+
+[node name="SynergyInfo" type="Label" parent="MainUI/BottomPanel"]
+layout_mode = 2
+
+[node name="RecapScene" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuarterSummary" type="VBoxContainer" parent="RecapScene"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NextCycleButton" type="Button" parent="RecapScene"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="TransitionEffects" type="CanvasLayer" parent="."]
+
+[node name="FadeTransition" type="AnimationPlayer" parent="TransitionEffects"]
