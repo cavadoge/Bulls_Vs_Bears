@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dww1jeyb2bn"]
+[gd_scene load_steps=3 format=3 uid="uid://dww1jeyb2bn"]
 
-[ext_resource type="Script" path="res://game_controller.gd" id="1_v0vc8"]
+[ext_resource type="Script" path="res://Scripts/game_controller.gd" id="1_v0vc8"]
+[ext_resource type="Script" path="res://Scripts/deployment_slot.gd" id="2_ks3pe"]
 
 [node name="GameRoot" type="Node2D"]
 
@@ -56,12 +57,178 @@ offset_bottom = 40.0
 
 [node name="DeployedPreview" type="HBoxContainer" parent="GameScene/PlanningLayer/UnitDeploymentPanel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 200.0
+offset_top = 60.0
+offset_right = 784.0
+offset_bottom = 180.0
+
+[node name="Slot0" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+script = ExtResource("2_ks3pe")
+
+[node name="PanelSlot0" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RectSlot0" type="ColorRect" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot0/PanelSlot0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.952941, 0, 0, 1)
+
+[node name="Slot1" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+script = ExtResource("2_ks3pe")
+slot_index = 1
+
+[node name="PanelSlot1" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RectSlot1" type="ColorRect" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot1/PanelSlot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.117647, 0, 1)
+
+[node name="Slot2" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+script = ExtResource("2_ks3pe")
+slot_index = 2
+
+[node name="PanelSlot2" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RectSlot2" type="ColorRect" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot2/PanelSlot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.235294, 0, 1)
+
+[node name="Slot3" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+script = ExtResource("2_ks3pe")
+slot_index = 3
+
+[node name="PanelSlot3" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RectSlot3" type="ColorRect" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot3/PanelSlot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.352941, 0, 1)
+
+[node name="Slot4" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+script = ExtResource("2_ks3pe")
+slot_index = 4
+
+[node name="PanelSlot4" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RectSlot4" type="ColorRect" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot4/PanelSlot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.470588, 0, 1)
+
+[node name="Slot5" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+script = ExtResource("2_ks3pe")
+slot_index = 5
+
+[node name="PanelSlot5" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RectSlot4" type="ColorRect" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot5/PanelSlot5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.588235, 0, 1)
+
+[node name="Slot6" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+script = ExtResource("2_ks3pe")
+slot_index = 6
+
+[node name="PanelSlot6" type="Panel" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RectSlot4" type="ColorRect" parent="GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot6/PanelSlot6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.705882, 0, 1)
 
 [node name="TeamMembersPanel" type="HBoxContainer" parent="GameScene/PlanningLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 89.0
+offset_top = 144.0
+offset_right = 129.0
+offset_bottom = 184.0
 
 [node name="PumpItButton" type="Button" parent="GameScene/PlanningLayer"]
 offset_right = 8.0
@@ -72,13 +239,17 @@ offset_bottom = 8.0
 [node name="MainUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 38.0
+offset_top = 200.0
+offset_right = 78.0
+offset_bottom = 240.0
 
 [node name="TopPanel" type="HBoxContainer" parent="MainUI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 82.0
+offset_top = 95.0
+offset_right = 122.0
+offset_bottom = 135.0
 
 [node name="MarketCapMeter" type="ProgressBar" parent="MainUI/TopPanel"]
 layout_mode = 2
@@ -91,8 +262,10 @@ layout_mode = 2
 
 [node name="BottomPanel" type="HBoxContainer" parent="MainUI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 122.0
+offset_top = 16.0
+offset_right = 162.0
+offset_bottom = 56.0
 
 [node name="MarketInfluence" type="Label" parent="MainUI/BottomPanel"]
 layout_mode = 2
@@ -103,13 +276,17 @@ layout_mode = 2
 [node name="RecapScene" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 23.0
+offset_top = 93.0
+offset_right = 63.0
+offset_bottom = 133.0
 
 [node name="QuarterSummary" type="VBoxContainer" parent="RecapScene"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 81.0
+offset_top = 23.0
+offset_right = 121.0
+offset_bottom = 63.0
 
 [node name="NextCycleButton" type="Button" parent="RecapScene"]
 layout_mode = 0

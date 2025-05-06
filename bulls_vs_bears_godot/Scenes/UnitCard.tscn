@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhip5np1wmoiw"]
+
+[ext_resource type="Script" path="res://Scripts/unit_card.gd" id="1_y5clp"]
+
+[node name="UnitCard" type="Button"]
+script = ExtResource("1_y5clp")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StatsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

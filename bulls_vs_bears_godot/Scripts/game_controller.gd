@@ -14,19 +14,28 @@ var target_market_cap: int = 1000
 var player_score: int = 0
 var enemy_score: int = 0
 
-@onready var planning_layer = $GameScene/PlanningLayer
-@onready var battle_layer = $GameScene/BattleLayer
-@onready var pump_unit_container = $GameScene/PumpSide/PumpUnitContainer
-@onready var dump_unit_container = $GameScene/DumpSide/DumpUnitContainer
-@onready var market_cap_meter = $MainUI/TopPanel/MarketCapMeter
-@onready var score_counter = $MainUI/TopPanel/ScoreCounter
-@onready var cycle_indicator = $MainUI/TopPanel/CycleIndicator
-@onready var recap_scene = $RecapScene
+@onready var planning_layer = get_parent().get_node("GameScene/PlanningLayer")
+@onready var battle_layer = get_parent().get_node("GameScene/BattleLayer")
+@onready var pump_unit_container = get_parent().get_node("GameScene/PumpSide/PumpUnitContainer")
+@onready var dump_unit_container = get_parent().get_node("GameScene/DumpSide/DumpUnitContainer")
+@onready var market_cap_meter = get_parent().get_node("MainUI/TopPanel/MarketCapMeter")
+@onready var score_counter = get_parent().get_node("MainUI/TopPanel/ScoreCounter")
+@onready var cycle_indicator = get_parent().get_node("MainUI/TopPanel/CycleIndicator")
+@onready var recap_scene = get_parent().get_node("RecapScene")
 
 func _ready():
-	#set_phase(GamePhase.PLANNING)
-	#update_ui()
-	print(pump_unit_container.name)  # This will error out at runtime
+	set_phase(GamePhase.PLANNING)
+	update_ui()
+	# Connect each DeploymentSlot's signal
+	for i in range(7):  # assuming you have exactly 7 slots
+		var slot = get_parent().get_node("GameScene/PlanningLayer/UnitDeploymentPanel/DeployedPreview/Slot" + str(i))
+		if slot:
+			slot.connect("slot_selected", _on_slot_selected)
+		else:
+			print("Slot", i, "not found!")
+
+func _on_slot_selected(index: int) -> void:
+	print("Deployment slot clicked! Index:", index)
 
 
 func set_phase(new_phase: GamePhase) -> void:
